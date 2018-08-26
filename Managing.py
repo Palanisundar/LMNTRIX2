@@ -1,7 +1,7 @@
 import cv2
 import os
 
-video='project_video.mp4'
+video='metero_crowd.mp4'
 initial_time=12000
 final_time=16000
 step=200
@@ -15,6 +15,6 @@ for i, time in enumerate(range(initial_time, final_time, step)):
     captured.set(cv2.CAP_PROP_POS_MSEC, time)
     success, img=captured.read()
     if success:
-       # Need to create the directory ( 'highway') first 
+       # Need to create the directory first 
        file='problem/frame{:03d}.jpg'.format(i+1)   
        cv2.imwrite(file,img)
